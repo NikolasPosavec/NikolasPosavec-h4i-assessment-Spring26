@@ -1,4 +1,4 @@
-// Using Photon API - more permissive than Nominatim
+// Using Photon API
 import { GeocodingResult } from "../types";
 const PHOTON_BASE_URL = "/geocode";
 

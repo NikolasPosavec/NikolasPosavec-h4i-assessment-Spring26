@@ -1,10 +1,16 @@
-const App = () => {
-  // Replace this with your code. Good luck!
-  return (
-    <div>
-      <h1>Spring 2026 Hack4Impact-UMD Technical Application Assessment</h1>
-    </div>
-  );
-};
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CityPage from "./pages/CityPage/CityPage";
+import HomePage from "./pages/HomePage/HomePage";
+
+function App() {
+    return(
+        <BrowserRouter>
+            <Routes>
+                <Route path = "/" element = {<HomePage />} />
+                <Route path="/city/:cityName" element={<CityPage />} />
+            </Routes>
+        </BrowserRouter>
+    );
+}
 
 export default App;

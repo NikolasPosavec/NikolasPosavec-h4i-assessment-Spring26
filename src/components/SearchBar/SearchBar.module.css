@@ -1,11 +1,11 @@
 .searchBar {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
-
 .searchBar input {
     width: 100%;
     padding: 15px 17px;

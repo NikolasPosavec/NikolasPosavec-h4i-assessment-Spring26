@@ -1,11 +1,11 @@
 import { AirQualityData, LatestMeasurementResponse, LocationSearchResponse } from "../types";
 
-// const API_KEY = XXX;
+const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "/api";
 
 
 // Main function that searches by coordinates
-export const fetchAirQualityByCoordinates = 
+export const fetchAirQualityByCoordinates = {
     // Step 1: Search for nearby PM2.5 monitors using bounding box
     
 

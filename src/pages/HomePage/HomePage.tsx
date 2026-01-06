@@ -3,14 +3,15 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import styles from './HomePage.module.css';
 import { searchCities } from '../../api/geocoding';
 import { GeocodingResult } from '../../types';
+import { useNavigate } from 'react-router-dom';
 
 function HomePage () {
     const [searchTerm, setSearchTerm] = useState("");
     const [isSearching, setIsSearching] = useState(false);
     const [cityResults, setCityResults] = useState<GeocodingResult[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        //check if bar is empty
         if(searchTerm.trim() === "") {
             setCityResults([]);
             setIsSearching(false);
@@ -39,7 +40,7 @@ function HomePage () {
         <div className = {styles.pageBackground}>
             <div className = {styles.container}>
                 <h1 className = {styles.title}>
-                {"\u{1F30F}"} Air Quality Tracker
+                    {"\u{1F30F}"} Air Quality Tracker
                 </h1>
                 <p className = {styles.subtitle}>
                     Search for any city to see PM2.5 air quality data
@@ -52,6 +53,33 @@ function HomePage () {
                     value = {searchTerm}
                     onChange = {setSearchTerm}
                 />
+                
+                {isSearching && <p>Searching...</p>}
+                
+                {!isSearching && cityResults.length > 0 &&(
+                    <div className = {styles.dropdownMenu}>
+                        {cityResults.map((city) => (
+                            <div
+                                key = {`${city.name} - ${city.lat} - ${city.lng}`}
+                                className = {styles.dropdownMenuItem}
+                                onClick = {() => {
+                                    navigate(`/city/${city.name}`, {
+                                        state: { city }
+                                    });
+                                    setCityResults([]);
+                                    setSearchTerm(city.name);
+                                }}
+                            >
+                                <div className = {styles.cityName}>
+                                    {city.name}
+                                </div>
+                                <div className = {styles.cityMeta}>
+                                    {city.displayName}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
 
                 <div className = {styles.searchExplanationCard}>
                     <h3>Search for a city to get started</h3>

@@ -18,7 +18,7 @@ function HomePage () {
             return;
         }
         //if not empty then search
-        const fetchCities = async () => {
+        const processSearchCities = async () => {
             setIsSearching(true);
 
             try {
@@ -26,18 +26,18 @@ function HomePage () {
 
                 setCityResults(results);
             } catch (error) {
-                console.error("Couldn't fetch results:", error);
+                console.error("Couldn't get results:", error);
             } finally {
                 //get rid of the loading placeholder
                 setIsSearching(false);
             }
         };
 
-        fetchCities();
+        processSearchCities();
     }, [searchTerm]) //this makes it so when the term changes it runs
 
     return (
-        <div className = {styles.pageBackground}>
+        <div className = {styles.background}>
             <div className = {styles.container}>
                 <h1 className = {styles.title}>
                     {"\u{1F30F}"} Air Quality Tracker

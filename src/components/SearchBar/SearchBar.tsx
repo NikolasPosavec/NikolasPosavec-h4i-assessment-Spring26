@@ -12,6 +12,7 @@ const SearchBar = ({value, onChange} : SearchBarProps) => {
         <div className = {styles.searchBar}>
             <input
                 type = "text"
+                placeholder="Search for a city (e.g. Tokyo, Paris, New York)..."
                 value = {value}
                 onChange = {(e) => onChange(e.target.value)}
             />

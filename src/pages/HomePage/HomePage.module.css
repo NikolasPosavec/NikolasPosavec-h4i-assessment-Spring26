@@ -1,0 +1,48 @@
+.pageBackground {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    text-align: center;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.searchExplanationCard {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 40px;
+    margin-top: 40px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.searchExplanationCard h3 {
+    color: #667eea;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.searchExplanationCard p {
+    color: #666666;
+    font-size: 16px; 
+    font-weight: 250;
+}

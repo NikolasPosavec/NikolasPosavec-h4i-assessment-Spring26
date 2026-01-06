@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SearchBar from "../components/SearchBar";
+import SearchBar from '../../components/SearchBar/SearchBar';
 import styles from './HomePage.module.css';
 
 function HomePage () {
@@ -9,7 +9,7 @@ function HomePage () {
         <div className = {styles.pageBackground}>
             <div className = {styles.container}>
                 <h1 className = {styles.title}>
-                    Air Quality Tracker
+                {"\u{1F30F}"} Air Quality Tracker
                 </h1>
                 <p className = {styles.subtitle}>
                     Search for any city to see PM2.5 air quality data
@@ -22,7 +22,7 @@ function HomePage () {
                     value = {searchTerm}
                     onChange = {setSearchTerm}
                 />
-                
+
                 <div className = {styles.searchExplanationCard}>
                     <h3>Search for a city to get started</h3>
                     <p>Enter a city name above to see its air quality data</p>

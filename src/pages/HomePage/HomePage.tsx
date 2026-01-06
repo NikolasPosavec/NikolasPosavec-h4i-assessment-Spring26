@@ -1,9 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import styles from './HomePage.module.css';
+import { searchCities } from '../../api/geocoding';
+import { GeocodingResult } from '../../types';
 
 function HomePage () {
     const [searchTerm, setSearchTerm] = useState("");
+    const [isSearching, setIsSearching] = useState(false);
+    const [cityResults, setCityResults] = useState<GeocodingResult[]>([]);
+
+    useEffect(() => {
+        //check if bar is empty
+        if(searchTerm.trim() === "") {
+            setCityResults([]);
+            setIsSearching(false);
+            return;
+        }
+        //if not empty then search
+        const fetchCities = async () => {
+            setIsSearching(true);
+
+            try {
+                const results = await searchCities(searchTerm);
+
+                setCityResults(results);
+            } catch (error) {
+                console.error("Couldn't fetch results:", error);
+            } finally {
+                //get rid of the loading placeholder
+                setIsSearching(false);
+            }
+        };
+
+        fetchCities();
+    }, [searchTerm]) //this makes it so when the term changes it runs
 
     return (
         <div className = {styles.pageBackground}>

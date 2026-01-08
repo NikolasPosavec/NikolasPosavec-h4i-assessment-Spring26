@@ -1,0 +1,76 @@
+.infoCard {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 450px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.topOfCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500px;
+    color: #ffffff;
+}
+
+.good {
+    background-color: #28a745;
+}
+
+.moderate {
+    background-color: #ffc107;
+}
+
+.unhealthy {
+    background-color: #dc3545;
+}
+
+.veryUnhealthy {
+    background-color: #8b2e9f;
+}
+
+.pmVal {
+    font-size: 50px;
+    font-weight: 750;
+    margin-bottom: 4px;
+}
+
+.pmUnits {
+    font-size: 20px;
+    font-weight: 450;
+}
+
+.pmValLabel {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.meta {
+    font-size: 12px;
+    color: #666666;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.metaLabel {
+    font-size: 12px;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.metaVal {
+    font-size: 12px;
+    color: #666666;
+}

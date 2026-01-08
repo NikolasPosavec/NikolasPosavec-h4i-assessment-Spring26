@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { fetchAirQualityByCoordinates } from "../../api/openaqi";
 import { AirQualityData, City } from "../../types";
-import cityInfoCard from '../../components/cityInfoCard/cityInfoCard';
 import styles from './CityPage.module.css';
+import CityInfoCard from "../../components/CityInfoCard/CityInfoCard";
 
 function CityPage() {
     const navigate = useNavigate();
@@ -50,7 +50,7 @@ function CityPage() {
             {error && <p>{error}</p>}
 
             {!isLoading && airQualityData && (
-                <cityInfoCard
+                <CityInfoCard
                     cityName = {city.name}
                     airQualityData = {airQualityData}
                 />

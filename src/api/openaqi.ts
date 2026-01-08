@@ -5,7 +5,10 @@ const BASE_URL = "/api";
 
 
 // Main function that searches by coordinates
-export const fetchAirQualityByCoordinates = {
+export const fetchAirQualityByCoordinates = async (
+    lat: number,
+    lng: number
+): Promise<AirQualityData> => {
     // Step 1: Search for nearby PM2.5 monitors using bounding box
     
 

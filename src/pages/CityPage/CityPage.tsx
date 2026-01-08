@@ -11,7 +11,7 @@ function CityPage() {
     const city = location.state?.city as City; //passed w/ router state
     const [airQualityData, setAirQualityData] = useState<AirQualityData | null>(null);
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         if(!city) {
@@ -22,13 +22,13 @@ function CityPage() {
         const processSearchForAirQuality = async () => {
             try {
                 setIsLoading(true);
+                setError(null);
 
-                const data = await fetchAirQualityByCoordinates(
-                    city.lat, city.lng
-                );
+                const data = await fetchAirQualityByCoordinates(city.lat, city.lng);
                 setAirQualityData(data);
             } catch (error) {
                 console.error("Couldn't get results:", error);
+                setError("Couldn't load data.");
             } finally {
                 setIsLoading(false);
             }

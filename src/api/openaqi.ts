@@ -9,8 +9,8 @@ export const fetchAirQualityByCoordinates = async (lat: number, lng: number):
 Promise<AirQualityData> => {
     // Step 1: Search for nearby PM2.5 monitors using bounding box
     const locationsResponse = await fetch (
-        `${BASE_URL}/locations?limit=15&coordinates=${lat},${lng}&radius=6000&parameter=pm25`,
-        { headers: {"X-API-KEY": API_KEY}}
+        `${BASE_URL}/locations?limit=15&coordinates=${lat},${lng}&radius=25000&parameter=pm25`,
+        { headers: {Authorization: `Bearer ${API_KEY}`}}
     );
 
     const locationsResponseData: LocationSearchResponse = await locationsResponse.json();
@@ -30,14 +30,22 @@ Promise<AirQualityData> => {
     if(!activeLocation) {
         throw new Error("No active stations found!")
     }
+    // find PM2.5 sensor
+    const pm25Sensor = activeLocation.sensors.find((sensor =>
+        sensor.parameter.name.toLowerCase() == "pm25"
+    ));
+
+    if(!pm25Sensor) {
+        throw new Error("No sensor found!")
+    }
 
     // Step 3: Get latest measurements
     const measurementsResponse = await fetch(
-        `${BASE_URL}/measurements?location_id=${activeLocation.id}&parameter=pm25&limit=1&sort=desc`,
-        { headers: {"X-API-KEY": API_KEY}}
+        `${BASE_URL}/measurements?sensor_id=${pm25Sensor.id}&limit=1&sort=desc`,
+        { headers: {Authorization: `Bearer ${API_KEY}`}}
     );
 
-    const measurementsResponseData: LatestMeasurementResponse = await measurementsResponse.json();
+    const measurementsResponseData = await measurementsResponse.json();
 
     if(!measurementsResponseData.results || measurementsResponseData.results.length === 0) {
         throw new Error("No measurements found!")

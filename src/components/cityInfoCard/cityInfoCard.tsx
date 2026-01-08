@@ -12,7 +12,6 @@ function CityInfoCard({ cityName, airQualityData}: CityInfoCardProps) {
     let status = "";
     let statusColor = "";
 
-    //vscode kept getting annoyed with me, so had to add condition to check if null
     if(pm25 != null) {
         if(pm25 <= 12) {
             status = "Good";

@@ -8,8 +8,8 @@ import CityInfoCard from "../../components/CityInfoCard/CityInfoCard";
 function CityPage() {
     const navigate = useNavigate();
     const location = useLocation();
-    const city = location.state?.city as City; //passed w router st
-    const [airQualityData, setAirQualityData] = useState(null);
+    const city = location.state?.city as City; //passed w/ router state
+    const [airQualityData, setAirQualityData] = useState<AirQualityData | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 

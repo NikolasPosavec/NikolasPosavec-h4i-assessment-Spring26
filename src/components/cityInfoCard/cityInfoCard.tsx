@@ -37,10 +37,11 @@ function CityInfoCard({ cityName, airQualityData}: CityInfoCardProps) {
                 </span>
             </div>
             
-            <div className = {styles.pmVal}>
-                {pm25}
-                <span className = {styles.pmUnits}> μg/m³</span>
+            <div className={styles.pmVal}>
+                {pm25 !== null ? Number(pm25.toFixed(3)).toString() : "N/A"}
+                <span className={styles.pmUnits}> μg/m³</span>
             </div>
+
 
             <div className = {styles.pmValLabel}> PM2.5</div>
 

@@ -14,63 +14,88 @@
     margin-bottom: 20px;
 }
 
-.status {
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 12px;
+.topOfCard h2 {
+    margin: 0;
+    font-size: 25px;
     font-weight: 500px;
-    color: #ffffff;
+}
+
+.status {
+    padding: 7px 15px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 500px;
 }
 
 .good {
-    background-color: #28a745;
+    background-color: rgba(40, 167, 69, 0.2);
+    -webkit-text-fill-color: #006d19;
+    font-weight: 500;
 }
 
 .moderate {
-    background-color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.2);
+    -webkit-text-fill-color: #e59c00;
+    font-weight: 500;
 }
 
 .unhealthy {
-    background-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.2);
+    -webkit-text-fill-color: #dc3545;
+    font-weight: 500;
 }
 
 .veryUnhealthy {
-    background-color: #8b2e9f;
+    background-color: rgba(139, 46, 159, 0.2);
+    -webkit-text-fill-color: #8b2e9f;
+    font-weight: 500;
 }
 
 .pmVal {
-    font-size: 50px;
+    font-size: 75px;
     font-weight: 750;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .pmUnits {
     font-size: 20px;
-    font-weight: 450;
+    font-weight: 500;
+    -webkit-text-fill-color: #666666;
 }
 
 .pmValLabel {
     font-size: 16px;
     color: #666666;
-    margin-bottom: 20px;
+    margin-bottom: 38px;
+    font-weight: 500;
+    padding-bottom: 35px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .meta {
     font-size: 12px;
     color: #666666;
-    display: flex;
-    justify-content: space-between;
     text-align: left;
+    margin-bottom: 20px;
+}
+
+.meta:last-child {
+    margin-bottom: 0;
 }
 
 .metaLabel {
     font-size: 12px;
-    font-weight: 500;
-    color: #333333;
+    font-weight: 250;
+    color: #666666;
     margin-bottom: 5px;
 }
 
 .metaVal {
     font-size: 12px;
-    color: #666666;
+    color: #333333;
+    font-weight: 600;
 }

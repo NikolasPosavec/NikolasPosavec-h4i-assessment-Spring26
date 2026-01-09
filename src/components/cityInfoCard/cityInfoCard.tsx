@@ -28,6 +28,19 @@ function CityInfoCard({ cityName, airQualityData}: CityInfoCardProps) {
         }
     }
 
+    //this is here for the last updated date part of the infocard
+    const lastUpdatedDate = (dateValue : string) => {
+        const date = new Date(dateValue);
+        return date.toLocaleString('en-US', {
+            month: 'numeric',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        });
+    }
+
     return (
         <div className = {styles.infoCard}>
             <div className = {styles.topOfCard}>
@@ -47,8 +60,15 @@ function CityInfoCard({ cityName, airQualityData}: CityInfoCardProps) {
 
             <div className = {styles.meta}>
                 <div>
-                    <div className = {styles.metaLabel}> Monitor Location</div>
+                    <div className = {styles.metaLabel}> MONITOR LOCATION</div>
                     <div className = {styles.metaVal}> {airQualityData.locationName}</div>
+                </div>
+            </div>
+            
+            <div className = {styles.meta}>
+                <div>
+                    <div className = {styles.metaLabel}> LAST UPDATED</div>
+                    <div className = {styles.metaVal}> {lastUpdatedDate(airQualityData.lastUpdated)}</div>
                 </div>
             </div>
         </div>

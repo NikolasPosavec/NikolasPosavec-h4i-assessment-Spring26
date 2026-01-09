@@ -38,13 +38,18 @@ function CityPage() {
 
     return (
         <div className = {styles.background}>
-            <button
-                className = {styles.backButton}
-                onClick = {() => navigate('/')}
-            >
-                {"\u{2197}"} Back to Search
-            </button>
-
+            <div className = {styles.header}>
+                <button
+                    className = {styles.backButton}
+                    onClick = {() => navigate('/')}
+                >
+                    {"\u{2190}"} Back to Search
+                </button>
+            
+                <h1 className = {styles.title}>
+                    {"\u{1F30F}"} Air Quality Tracker
+                </h1>
+            </div>
             {isLoading && <p>Loading air quality data...</p>}
 
             {error && <p>{error}</p>}

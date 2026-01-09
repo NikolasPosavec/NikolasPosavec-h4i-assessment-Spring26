@@ -45,14 +45,14 @@ function HomePage () {
                 <p className = {styles.subtitle}>
                     Search for any city to see PM2.5 air quality data
                 </p>
-
-                {/*SearchBar is not actually processing anything,
-                thats why all that I passed is the current value 
-                and a way to update it */}
-                <SearchBar
-                    value = {searchTerm}
-                    onChange = {setSearchTerm}
-                />
+                <div className = {styles.dropdownHelper}>
+                    {/*SearchBar is not actually processing anything,
+                    thats why all that I passed is the current value 
+                    and a way to update it */}
+                    <SearchBar
+                        value = {searchTerm}
+                        onChange = {setSearchTerm}
+                    />
                 
                 {isSearching && <p>Searching...</p>}
                 
@@ -80,7 +80,7 @@ function HomePage () {
                         ))}
                     </div>
                 )}
-
+                </div>
                 <div className = {styles.searchExplanationCard}>
                     <h3>Search for a city to get started</h3>
                     <p>Enter a city name above to see its air quality data</p>

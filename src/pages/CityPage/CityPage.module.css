@@ -10,16 +10,18 @@
 
 .header {
     width: 100%;
-    display: flex;
+    max-width: none;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-bottom: 30px;
+    justify-items: center;
+    padding: 0 24px;
+    margin-bottom: 80px;
 }
 
 .backButton {
-    position: absolute;
-    left: 100px;
+    grid-column: 1;
+    justify-self: start;
     background: rgba(255, 255, 255, 0.2);
     color: white;
     padding: 15px 40px;
@@ -27,6 +29,7 @@
     font-size: 16px;
     cursor: pointer;
     border: none;
+    margin-left: 200px;
 }
 
 .loadingText, .errorText {
@@ -36,11 +39,32 @@
 }
 
 .title {
+    grid-column: 2;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
     color: #ffffff;
     font-size: 45px;
     font-weight: 750px;
-    margin-bottom: 38px;
-    margin-top: 0;
-    text-align: center;
+    margin: 0 auto;
 }
 
+/*was having issue where resizing window would make
+back to serch button go over on top of the title so 
+changed my layout to use grid-template-columns which
+made it way easier to fix the problem*/
+@media (max-width: 700px) {
+    .header {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .backButton {
+        grid-column: 1;
+        align-self: flex-start;
+    }
+
+    .title {
+        grid-column: 1;
+    }
+}

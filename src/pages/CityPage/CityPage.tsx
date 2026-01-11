@@ -14,6 +14,7 @@ function CityPage() {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+        //if state is missing just redirect so it doesnt give back a broken page
         if(!city) {
             navigate('/');
             return;

@@ -6,7 +6,7 @@ interface SearchBarProps {
 }
 
 /* as previously mentioned in HomePage, this only handles UI.
-   SearchBar doesnt actually store state or fetch*/
+   SearchBar doesnt actually store state or fetch, make it reusable also*/
 const SearchBar = ({value, onChange} : SearchBarProps) => {
     return (
         <div className = {styles.searchBar}>

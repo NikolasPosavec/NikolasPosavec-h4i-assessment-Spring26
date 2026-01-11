@@ -5,14 +5,14 @@ import { AirQualityData, LatestMeasurementResponse, LocationSearchResponse } fro
   process i did. in a real project i would have imported the key from a .env file that
   would not get pushed to git*/
   const BASE_URL = "/api";
-  /*openaq uses 2 as the id for pm2.5*/
+  /*openaq uses 2 as the id for pm2.5, hardcoded to avoid unecessary calls*/
   const PM25_PARAMETER_ID = 2;
   
   // Main function that searches by coordinates
   export const fetchAirQualityByCoordinates = async (lat: number, lng: number): 
   Promise<AirQualityData> => {
     // Step 1: Search for nearby PM2.5 monitors using bounding box
-    const change = 0.25; /*used 0.25 bc i found it to give the best
+    const change = 0.25; /*used 0.25 b/c i found it to give the best
     balance between finding nearby coverage and getting a reasonable amount of results*/
   
     const minLat = lat - change;

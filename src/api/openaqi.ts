@@ -1,7 +1,9 @@
 import { AirQualityData, LatestMeasurementResponse, LocationSearchResponse } from "../types";
   
-  const API_KEY = import.meta.env.VITE_API_KEY; /*in a real project i wouldnt push
-  the .env file for security reasons but for this assessment it as been pushed as I was told to do */
+  const API_KEY = "8662e8346ef5b09ce327e369b38fa4cf8dc88a862b3ff9ae80ec96f4eb165ea9"; 
+  /*in a real project i wouldnt hardcode the api key, but for simplicity in the review
+  process i did. in a real project i would have imported the key from a .env file that
+  would not get pushed to git*/
   const BASE_URL = "/api";
   const PM25_PARAMETER_ID = 2;
   

@@ -17,7 +17,7 @@ function HomePage () {
             setIsSearching(false);
             return;
         }
-        //if not empty then search
+        
         const processSearchCities = async () => {
             setIsSearching(true);
 
@@ -28,13 +28,13 @@ function HomePage () {
             } catch (error) {
                 console.error("Couldn't get results:", error);
             } finally {
-                //get rid of the loading placeholder
+                //the indicator should disappear no matter what so i put it under finally
                 setIsSearching(false);
             }
         };
 
         processSearchCities();
-    }, [searchTerm]) //this makes it so when the term changes it runs
+    }, [searchTerm])
 
     return (
         <div className = {styles.background}>

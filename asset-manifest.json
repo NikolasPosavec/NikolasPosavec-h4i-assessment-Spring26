@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/NikolasPosavec-h4i-assessment-Spring26/static/css/main.659e5ed1.css",
+    "main.js": "/NikolasPosavec-h4i-assessment-Spring26/static/js/main.0c641dc2.js",
+    "index.html": "/NikolasPosavec-h4i-assessment-Spring26/index.html",
+    "main.659e5ed1.css.map": "/NikolasPosavec-h4i-assessment-Spring26/static/css/main.659e5ed1.css.map",
+    "main.0c641dc2.js.map": "/NikolasPosavec-h4i-assessment-Spring26/static/js/main.0c641dc2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.659e5ed1.css",
+    "static/js/main.0c641dc2.js"
+  ]
+}
